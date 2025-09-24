@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar do Zequinha - Links</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- Configurações Globais e Variáveis --- */
+        :root {
+            --primary-red: #b82a2a; /* Vermelho extraído do logo e site */
+            --dark-text: #1e1e1e;   /* Preto suave para texto */
+            --light-background: #f0f0f0; /* Cinza claro do fundo do logo */
+            --white: #ffffff;
+            --secondary-text: #555555;
+
+            --font-title: 'Oswald', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- Estilo Base da Página --- */
+        body {
+            font-family: var(--font-body);
+            background-color: var(--light-background);
+            color: var(--dark-text);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        /* --- Container Principal --- */
+        .container {
+            width: 100%;
+            max-width: 680px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Seção do Header (Perfil) --- */
+        .profile-header {
+            margin-bottom: 2rem;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 5px solid var(--primary-red);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .main-title {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .handle {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+        
+        /* --- Seção dos Links --- */
+        .links-section {
+            width: 100%;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem; /* Espaçamento entre os botões */
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            background-color: var(--primary-red);
+            color: var(--white);
+            text-decoration: none;
+            
+            padding: 1rem;
+            border-radius: 50px; /* Bordas totalmente arredondadas */
+            font-size: 1.1rem;
+            font-weight: 500;
+            
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(184, 42, 42, 0.4);
+        }
+
+        .link-button i {
+            margin-right: 0.8rem;
+            font-size: 1.3rem; /* Tamanho do ícone */
+            width: 25px; /* Alinhamento dos ícones */
+            text-align: center;
+        }
+        
+        /* --- Rodapé --- */
+        footer {
+            margin-top: 4rem;
+            font-size: 0.8rem;
+            color: #888;
+            text-align: center; /* ALTERAÇÃO APLICADA AQUI */
+        }
+
+        footer p {
+            margin-bottom: 0.25rem;
+        }
+
+        /* --- Responsividade para Dispositivos Menores --- */
+        @media (max-width: 600px) {
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .profile-picture {
+                width: 120px;
+                height: 120px;
+            }
+
+            .link-button {
+                padding: 0.9rem;
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <header class="profile-header">
+            <img src="logo.png" alt="Logo do Bar do Zequinha" class="profile-picture">
+            <h1 class="main-title">Bar do Zequinha</h1>
+            <p class="handle">@bardozequinhaoficial</p>
+            <p class="description">
+                O melhor bar em Neves, MG. Cerveja gelada, amigos e a melhor comida de boteco da região!
+            </p>
+        </header>
+
+        <nav class="links-section">
+            <a href="#" class="link-button">
+                <i class="fa-solid fa-star"></i>
+                <span>Avaliações no Google</span>
+            </a>
+            <a href="#" class="link-button">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Nosso Cardápio</span>
+            </a>
+            <a href="#" class="link-button">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Siga no Instagram</span>
+            </a>
+        </nav>
+
+    </main>
+    
+    <footer>
+        <p>Copyright © 2025 Bar do Zequinha</p>
+        <p>Powered by Bar do Zequinha</p>
+    </footer>
+
+</body>
+</html>
