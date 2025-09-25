@@ -3,155 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar do Zequinha - Links</title>
+    <title>Sua Opinião é Importante! - Bar do Zequinha</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* --- Configurações Globais --- */
+        /* --- Configurações e Variáveis de Design --- */
         :root {
-            --primary-red: #b82a2a;
-            --dark-text: #1e1e1e;
-            --light-background: #f0f0f0;
-            --white: #ffffff;
-            --secondary-text: #555555;
-            --font-title: 'Oswald', sans-serif;
-            --font-body: 'Roboto', sans-serif;
+            --page-bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-dark: #333333;
+            --text-light: #6c757d;
+            --positive-green: #28a745;
+            --negative-red: #dc3545;
+            --submit-blue: #007bff;
+            --border-color: #dee2e6;
+            --font-main: 'Poppins', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: var(--font-body);
-            background-color: var(--light-background);
-            color: var(--dark-text);
+            font-family: var(--font-main);
+            background-color: var(--page-bg);
+            color: var(--text-dark);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 2rem 1rem;
+            padding: 1.5rem;
         }
 
-        .container {
+        /* --- Estilo do Card Principal --- */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            padding: 2.5rem;
             width: 100%;
-            max-width: 680px;
+            max-width: 480px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        /* --- Seção do Header --- */
-        .profile-header { margin-bottom: 2rem; }
+        .logo { width: 100px; height: 100px; margin-bottom: 2rem; }
+        
+        h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 2rem; }
 
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-            /* A borda vermelha foi removida conforme solicitado */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        /* --- Ações Primárias (Avaliação) --- */
+        .primary-actions { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+
+        .btn {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            width: 100%; padding: 1rem; border: none; border-radius: 8px;
+            color: var(--card-bg); font-size: 1rem; font-weight: 600; text-decoration: none;
+            cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+        .btn i { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .btn.positive { background-color: var(--positive-green); }
+        .btn.negative { background-color: var(--negative-red); }
 
-        .main-title {
-            font-family: var(--font-title);
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.25rem;
+        /* --- Separador e Ações Secundárias --- */
+        .separator {
+            border-top: 1px solid var(--border-color);
+            margin: 0 auto 1.5rem auto;
+            width: 80%;
         }
-
-        .handle {
-            font-size: 1.1rem;
-            color: var(--secondary-text);
-            font-weight: 500;
+        
+        .secondary-title {
+            font-size: 0.9rem;
+            color: var(--text-light);
             margin-bottom: 1rem;
         }
 
-        .description {
-            font-size: 1rem;
-            max-width: 500px;
-            line-height: 1.6;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* --- Seção dos Links --- */
-        .links-section {
-            width: 100%;
-            margin-top: 1rem; /* Espaçamento ajustado */
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
+        .secondary-actions { display: flex; justify-content: center; gap: 1.5rem; }
 
-        .link-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--primary-red);
-            color: var(--white);
+        .link-secondary {
+            color: var(--text-dark);
             text-decoration: none;
-            padding: 1rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
         }
+        .link-secondary:hover { color: var(--submit-blue); }
 
-        .link-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(184, 42, 42, 0.4);
-        }
-
-        .link-button i {
-            margin-right: 0.8rem;
-            font-size: 1.3rem;
-            width: 25px;
+        .link-secondary i {
+            width: 24px;
             text-align: center;
         }
-        
+
+        /* --- Estilo do Formulário (Oculto) --- */
+        #form-view h1 { margin-bottom: 1rem; }
+        .form-description { color: var(--text-light); margin-bottom: 1.5rem; }
+        .form-group { text-align: left; margin-bottom: 1rem; }
+        .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 0.8rem; border: 1px solid var(--border-color);
+            border-radius: 8px; font-family: var(--font-main); font-size: 1rem;
+        }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .btn.submit { width: 100%; background-color: var(--submit-blue); margin-top: 1rem; }
+
+        /* --- Estilo da Mensagem de "Obrigado" (Oculto) --- */
+        .instagram-link {
+             display: inline-flex; align-items: center; justify-content: center; margin-top: 1rem;
+             background-color: var(--text-dark); color: var(--card-bg); text-decoration: none;
+             padding: 0.8rem 1.5rem; border-radius: 50px; font-size: 1rem; font-weight: 500;
+             transition: transform 0.2s;
+        }
+        .instagram-link:hover { transform: scale(1.05); }
+        .instagram-link i { margin-right: 0.8rem; }
+
         /* --- Rodapé --- */
         footer {
             margin-top: 2rem;
             font-size: 0.8rem;
-            color: #888;
+            color: #999;
             text-align: center;
         }
-
-        footer p { margin-bottom: 0.25rem; }
-
-        /* --- Responsividade para Dispositivos Menores --- */
-        @media (max-width: 600px) {
-            .main-title { font-size: 2rem; }
-            .profile-picture { width: 120px; height: 120px; }
-            .link-button { padding: 0.9rem; font-size: 1rem; }
+        footer p {
+            margin-bottom: 0.25rem;
         }
 
-        /* --- NOVO: Rodapé Responsivo --- */
-        /* Estes estilos só serão aplicados em telas com 768px de largura ou mais (tablets e desktops) */
+        /* --- Responsividade --- */
+        @media (max-width: 600px) {
+            .card { padding: 1.5rem; }
+            .primary-actions { flex-direction: column; }
+            .secondary-actions {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center; /* AJUSTE FINAL: Centraliza os links empilhados */
+            }
+        }
+        
+        /* --- Rodapé Responsivo para Desktop --- */
         @media (min-width: 768px) {
-            
-            /* 1. Transforma o rodapé em um container flexível */
             footer {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 0.5rem;
             }
-
-            /* 2. Remove a margem de baixo do primeiro parágrafo */
             footer p {
                 margin-bottom: 0; 
             }
-
-            /* 3. Adiciona o separador "|" magicamente com CSS */
             footer p:first-child::after {
                 content: "|";
                 margin-left: 0.5rem;
@@ -162,42 +164,59 @@
 </head>
 <body>
 
-    <main class="container">
-        
-        <header class="profile-header">
-            <img src="logo.png" alt="Logo do Bar do Zequinha" class="profile-picture">
-            <h1 class="main-title">Bar do Zequinha</h1>
-            <p class="handle">@bardozequinha</p>
-            <p class="description">
-                A saideira? Só depois de uma boa avaliação! A gente se vê de novo no balcão ou na sua timeline. Deixe sua marca e conecte-se!
-            </p>
-        </header>
-
-        <nav class="links-section">
-            <a href="#" class="link-button">
-                <i class="fa-solid fa-star"></i>
-                <span>Deixe Sua Marca - Nos Avalie</span>
-            </a>
-            <a href="#" class="link-button">
-                <i class="fa-solid fa-utensils"></i>
-                <span>Nosso Cardápio</span>
-            </a>
-            <a href="#" class="link-button">
-                <i class="fa-brands fa-instagram"></i>
-                <span>Siga no Instagram</span>
-            </a>
-        </nav>
+    <main class="card">
+        <div id="main-view">
+            <img src="logo.png" alt="Logo do Bar do Zequinha" class="logo">
+            <h1>Como foi sua experiência conosco hoje?</h1>
+            <div class="primary-actions">
+                <a href="#" id="excellent-btn" class="btn positive"><i class="fa-solid fa-thumbs-up"></i><span>Excelente</span></a>
+                <button type="button" id="improve-btn" class="btn negative"><i class="fa-solid fa-thumbs-down"></i><span>Pode Melhorar</span></button>
+            </div>
+            <div class="separator"></div>
+            <p class="secondary-title">Ou acesse outros links:</p>
+            <div class="secondary-actions">
+                <a href="#" class="link-secondary"><i class="fa-brands fa-instagram"></i><span>Siga no Instagram</span></a>
+                <a href="#" class="link-secondary"><i class="fa-solid fa-utensils"></i><span>Nosso Cardápio</span></a>
+            </div>
+        </div>
+        <div id="form-view" style="display: none;">
+            <img src="logo.png" alt="Logo do Bar do Zequinha" class="logo">
+            <h1>Que pena! Conte-nos mais.</h1>
+            <p class="form-description">Seu feedback é privado e nos ajudará a melhorar nossos serviços.</p>
+            <form id="feedback-form">
+                <div class="form-group"><label for="name">Seu Nome (Opcional)</label><input type="text" id="name" name="name" placeholder="Como podemos te chamar?"></div>
+                <div class="form-group"><label for="contact">Email ou Telefone (Opcional)</label><input type="text" id="contact" name="contact" placeholder="Caso queira um retorno"></div>
+                <div class="form-group"><label for="message">Sua Mensagem</label><textarea id="message" name="message" placeholder="Por favor, nos conte o que aconteceu..." required></textarea></div>
+                <button type="submit" class="btn submit">Enviar Feedback</button>
+            </form>
+        </div>
+        <div id="thank-you-view" style="display: none;">
+            <img src="logo.png" alt="Logo do Zequinha" class="logo">
+            <h1>Obrigado pelo seu feedback!</h1>
+            <p class="form-description">Vamos trabalhar para melhorar. Enquanto isso, que tal nos seguir?</p>
+            <a href="#" class="instagram-link"><i class="fa-brands fa-instagram"></i><span>Siga no Instagram</span></a>
+        </div>
     </main>
-    
     <footer>
         <p>Copyright © 2025 Bar do Zequinha</p>
         <p>Powered by Bar do Zequinha</p>
     </footer>
+    <script>
+        const mainView = document.getElementById('main-view');
+        const formView = document.getElementById('form-view');
+        const thankYouView = document.getElementById('thank-you-view');
+        const improveBtn = document.getElementById('improve-btn');
+        const feedbackForm = document.getElementById('feedback-form');
+        improveBtn.addEventListener('click', () => {
+            mainView.style.display = 'none';
+            formView.style.display = 'block';
+        });
+        feedbackForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            formView.style.display = 'none';
+            thankYouView.style.display = 'block';
+        });
+    </script>
 
 </body>
 </html>
-
-
-
-
-
